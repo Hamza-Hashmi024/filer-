@@ -1,19 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { MdMarkEmailRead } from "react-icons/md";
-import { FaPhoneSquareAlt, FaLinkedin, FaFacebook } from "react-icons/fa";
-import { FaLocationDot } from "react-icons/fa6";
+import {  FaLinkedin, FaFacebook } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import LOGO from "../assets/Logo.jpg";
-const contactItems = [
-  { icon: <MdMarkEmailRead size={24} />, text: "hamzaasif064@gmail.com" },
-  { icon: <FaPhoneSquareAlt size={24} />, text: "03314824760" },
-  { icon: <FaLocationDot size={24} />, text: "793C Faisal Town Lahore" },
-];
+
+
 const socialItems = [
-  { icon: <FaFacebook size={24} color="#47464C" /> },
-  { icon: <RiInstagramFill size={24} color="#47464C"  /> },
-  { icon: <FaLinkedin size={24} color="#47464C"  /> },
+  { icon: <FaFacebook size={25} color="#47464C"  /> },
+  { icon: <RiInstagramFill size={25} color="#47464C"  /> },
+  { icon: <FaLinkedin size={25} color="#47464C"  /> },
 ];
 const navMenu = [
   { name: "Home", URL: "/" },
@@ -24,34 +19,23 @@ const navMenu = [
 ];
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   const toggleMobileMenu = () => setMobileMenuOpen(!isMobileMenuOpen);
 
   return (
     <>
-      {/* Top Bar: Contact Info & Social Links */}
+
+      {/* Top Bar Social Links */}
       <div className="w-full h-16 bg-[#B4C424] flex justify-center items-center shadow-lg text-white">
-        <div className="w-full max-w-screen-xl flex justify-between items-center px-4 sm:px-8">
-          {/* Contact Info Section */}
-          <div className="flex items-center space-x-6 text-sm">
-            {contactItems.map((item, index) => (
-              <div
-                key={index}
-                className="flex items-center space-x-2 hover:text-[#FEFAF6] transition-colors duration-300"
-              >
-                <div className="text-[#47464C]">{item.icon}</div>
-                <a>{item.text}</a>
-              </div>
-            ))}
-          </div>
+        <div className="w-full max-w-screen-xl flex justify-end items-end px-4 sm:px-8">
+          
 
           {/* Social Media Section */}
-          <div className="flex items-center space-x-6">
-            <span>Follow us on:</span>
+          <div className="flex  items-center space-x-6">
+            <span className="text-[#47464C] font-semibold " >Follow us on:</span>
             {socialItems.map((item, index) => (
               <div
                 key={index}
-                className="hover:text-[#47464C]  transition-colors duration-300 cursor-pointer"
+                className=" rounded-full   cursor-pointer "
               >
                 {item.icon}
               </div>
@@ -59,6 +43,8 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
+       
 
       {/* Navbar: Logo & Links */}
       <div className="w-full flex justify-center items-center h-7 py-7">
@@ -83,6 +69,9 @@ const Navbar = () => {
               </div>
             ))}
           </div>
+
+
+
 
           {/* Mobile Hamburger Menu Icon */}
           <div className="md:hidden">
