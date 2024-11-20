@@ -16,7 +16,7 @@ const Welcome = () => {
               <h1 className="text-balance text-2xl font-semibold tracking-tight text-[#47464C] sm:text-6xl">
                 Welcome to Your Trusted Business Partner
               </h1>
-              <p className="mt-8 text-lg font-medium text-[#47464C] sm:text-xl/8">
+              <p className="mt-8 text-lg word-spacing font-normal text-[#47464C] sm:text-xl/8">
                 Empowering your growth and unlocking new opportunities for success. Discover solutions tailored to meet your unique needs, all in one place.
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
@@ -55,4 +55,5 @@ const Welcome = () => {
 };
 
 export default Welcome;
+
 
