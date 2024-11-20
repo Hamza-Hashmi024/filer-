@@ -46,11 +46,11 @@ const SalaryTaxCalculator = () => {
   };
 
   return (
-    <div className=" rounded-3xl shadow-2xl bg-gray-100 flex flex-col items-center py-10 px-4">
-      <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">
+    <div className="rounded-3xl shadow-2xl bg-gray-100 flex flex-col items-center py-10 px-4 sm:px-6 lg:px-8">
+      <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">
         Pakistan Salary Tax Calculator
       </h1>
-      <div className="bg-white shadow-lg rounded-lg p-6 max-w-md w-full">
+      <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-xs sm:max-w-md">
         <label htmlFor="income" className="block text-gray-700 font-medium mb-2">
           Enter your monthly income (PKR):
         </label>
@@ -69,7 +69,7 @@ const SalaryTaxCalculator = () => {
           Calculate Tax
         </button>
         {result && (
-          <div className="mt-6">
+          <div className="mt-6 overflow-x-auto">
             <table className="w-full text-gray-700 border-collapse border border-gray-300">
               <thead>
                 <tr className="bg-gray-100">
@@ -131,9 +131,9 @@ const SalaryTaxCalculator = () => {
           </div>
         )}
       </div>
-    
     </div>
   );
 };
 
 export default SalaryTaxCalculator;
+
