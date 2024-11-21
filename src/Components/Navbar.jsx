@@ -48,7 +48,7 @@ const Navbar = () => {
 
       {/* Navbar: Logo & Links */}
       <div className="w-full flex justify-center items-center h-7 py-7">
-        <nav className="w-full max-w-screen-xl fixed  flex justify-between items-center px-4 sm:px-8 bg-white shadow-md rounded-lg">
+        <nav className="w-full max-w-screen-xl  flex justify-between items-center px-4 sm:px-8 bg-white shadow-md rounded-lg">
           {/* Logo Section */}
           <div className="flex items-center">
             <Link to="/" className="bg-black w-11">

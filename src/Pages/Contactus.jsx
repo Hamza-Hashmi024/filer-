@@ -1,23 +1,82 @@
 import { useState } from "react";
 import Navbar from "../Components/Navbar";
-import { FaEnvelope, FaPhoneAlt, FaUserAlt, FaRegComment } from "react-icons/fa";
+import { FaEnvelope, FaPhoneAlt, FaUserAlt } from "react-icons/fa";
 import { Alert } from "@mui/material";
 import Footer from "../Components/Footer";
 import { motion } from "framer-motion";
-import { FaPhoneVolume } from "react-icons/fa6"
+import { FaPhoneVolume } from "react-icons/fa6";
 import { MdMarkEmailRead } from "react-icons/md";
 import { FaMapLocationDot } from "react-icons/fa6";
 
 const Contactus = () => {
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
   const [alert, setAlert] = useState(null);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  };
+
+  const validateForm = () => {
+    const { firstName, lastName, phone, email, message } = form;
+    if (!firstName || !lastName || !phone || !email || !message) {
+      return "Please fill in all fields.";
+    }
+    // Updated regex for Pakistani phone number format
+    if (!/^((\+92)?(0092)?(92)?(0)?)(3)([0-9]{9})$/gm.test(phone)) {
+      return "Phone number format should be valid Pakistani number.";
+    }
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      return "Please enter a valid email address.";
+    }
+    return null;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Validate form
+    const errorMessage = validateForm();
+    if (errorMessage) {
+      setAlert({
+        severity: "error",
+        message: errorMessage,
+      });
+      setTimeout(() => setAlert(null), 5000);
+      return;
+    }
+
+    // If validation is successful, display success alert
     setAlert({
       severity: "success",
       message: "Your message has been sent successfully!",
     });
     setTimeout(() => setAlert(null), 5000);
+
+    // Reset form
+    setForm({
+      firstName: "",
+      lastName: "",
+      phone: "",
+      email: "",
+      message: "",
+    });
+  };
+
+  // Handle form submit on  press Enter key
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleSubmit(e);
+    }
   };
 
   return (
@@ -28,42 +87,34 @@ const Contactus = () => {
       <div className="relative bg-[#47464C] text-white">
         <div className="absolute inset-x-0 -bottom-16 h-16 bg-white rounded-t-full"></div>
         <div className="w-full py-20 flex flex-col items-center justify-center text-center px-4">
-          <h1 className="text-4xl sm:text-5xl font-semibold mb-4">Contact Us</h1>
+          <h1 className="text-4xl sm:text-5xl font-semibold mb-4">
+            Contact Us
+          </h1>
           <p className="text-base sm:text-lg max-w-2xl">
             Have any questions or need assistance? Reach out to us today! Our
             team is here to help and provide you with the best solutions.
           </p>
           <div className="mt-6 flex flex-col sm:flex-row gap-4">
-  {/* Phone */}
-  <div className="flex flex-col items-center text-center">
-    <FaPhoneVolume size={30} color="#B4C424" />
-    <p className="mt-2">+923314824760</p>
-  </div>
-  
-  {/* Email */}
-  <div className="flex flex-col items-center text-center">
-    <MdMarkEmailRead size={30} color="#B4C424" />
-    <p className="mt-2">hamzaasif064@gmail.com</p>
-  </div>
-  
-  {/* Location */}
-  <div className="flex flex-col items-center text-center">
-    <FaMapLocationDot size={30} color="#B4C424" />
-    <p className="mt-2">793C Faisal Town Lahore</p>
-  </div>
-</div>
+            {/* Phone */}
+            <div className="flex flex-col items-center text-center">
+              <FaPhoneVolume size={30} color="#B4C424" />
+              <p className="mt-2">+923314824760</p>
+            </div>
 
+            {/* Email */}
+            <div className="flex flex-col items-center text-center">
+              <MdMarkEmailRead size={30} color="#B4C424" />
+              <p className="mt-2">hamzaasif064@gmail.com</p>
+            </div>
+
+            {/* Location */}
+            <div className="flex flex-col items-center text-center">
+              <FaMapLocationDot size={30} color="#B4C424" />
+              <p className="mt-2">793C Faisal Town Lahore</p>
+            </div>
+          </div>
         </div>
       </div>
-
-      {/* Alert Section */}
-      {alert && (
-        <div className="px-4">
-          <Alert severity={alert.severity} className="mb-4">
-            {alert.message}
-          </Alert>
-        </div>
-      )}
 
       {/* Contact Section */}
       <div className="w-full flex items-center justify-center px-4 py-8">
@@ -85,6 +136,7 @@ const Contactus = () => {
           <div className="flex-1 flex items-center justify-center bg-[#47464C] p-6">
             <form
               onSubmit={handleSubmit}
+              onKeyDown={handleKeyDown}  
               className="space-y-6 w-full max-w-md p-4 sm:p-8 rounded-lg"
             >
               <motion.h1
@@ -121,8 +173,11 @@ const Contactus = () => {
                     <input
                       type="text"
                       id="first_name"
+                      name="firstName"
                       className="bg-transparent border-none text-[#47464C] text-sm focus:outline-none w-full"
                       placeholder="First Name"
+                      value={form.firstName}
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -141,8 +196,11 @@ const Contactus = () => {
                     <input
                       type="text"
                       id="last_name"
+                      name="lastName"
                       className="bg-transparent border-none text-[#47464C] text-sm focus:outline-none w-full"
                       placeholder="Last Name"
+                      value={form.lastName}
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -162,9 +220,12 @@ const Contactus = () => {
                   <input
                     type="tel"
                     id="phone"
+                    name="phone"
                     className="bg-transparent border-none text-[#47464C] text-sm focus:outline-none w-full"
                     placeholder="+92"
-                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                    value={form.phone}
+                    onChange={handleChange}
+                    pattern="^((\+92)?(0092)?(92)?(0)?)(3)([0-9]{9})$"
                     required
                   />
                 </div>
@@ -183,38 +244,47 @@ const Contactus = () => {
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     className="bg-transparent border-none text-[#47464C] text-sm focus:outline-none w-full"
-                    placeholder="@gmail.com"
+                    placeholder="youremail@example.com"
+                    value={form.email}
+                    onChange={handleChange}
                     required
                   />
                 </div>
               </div>
 
-              {/* Message */}
-              <div>
-                <label
+
+            <label
                   htmlFor="message"
-                  className="block mb-2 text-sm font-medium text-white"
-                >
-                  Message
+                  className="block  text-sm font-medium text-white">
+                  Your Message
                 </label>
-                <div className="flex items-start bg-[#F9FAFB] border border-[#B4C424] rounded-lg p-3">
-                  <FaRegComment className="text-[#47464C] mr-2 mt-1" />
-                  <textarea
-                    id="message"
-                    className="bg-transparent border-none text-[#47464C] text-sm focus:outline-none w-full h-32 resize-none"
-                    placeholder="Write your message here..."
-                    required
-                  />
+
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  className="block w-full p-4 bg-white text-[#47464C] border border-[#B4C424] rounded-lg"
+                  placeholder="Write your message..."
+                  value={form.message}
+                  onChange={handleChange}
+                  required
+                ></textarea>
+
+              {/* Alert */}
+              {alert && (
+                <div>
+                  <Alert severity={alert.severity}>{alert.message}</Alert>
                 </div>
-              </div>
+              )}
 
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full py-3 px-6 bg-[#B4C424] text-white font-medium rounded-lg text-sm focus:ring-4 focus:outline-none focus:ring-[#B4C424] hover:bg-[#A0B520] transition duration-300"
+                className=" py-2 px-4 mt-4 text-white bg-[#B4C424] rounded-lg hover:bg-[#B4C424] focus:outline-none focus:ring-2 focus:ring-[#B4C424]"
               >
-                Submit
+                Send Message
               </button>
             </form>
           </div>
@@ -227,5 +297,4 @@ const Contactus = () => {
 };
 
 export default Contactus;
-
 
