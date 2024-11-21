@@ -33,7 +33,7 @@ const Services = () => {
     <>
       <Navbar />
       
-      <div className="w-10/12 mt-8 mb-8  flex flex-col items-end   ">
+      {/* <div className="w-10/12 mt-8 mb-8  flex flex-col items-end   ">
   <form className="max-w-md  ml-25 ">
     <h2 className="text-2xl font-bold text-[#47464C] mb-4">
       Find what you are looking for...
@@ -77,7 +77,54 @@ const Services = () => {
       </button>
     </div>
   </form>
+</div> */}
+
+<div className="w-full px-4 mt-8 mb-8 flex flex-col items-center lg:w-10/12 lg:items-end lg:mx-auto">
+  <form className="max-w-md w-full">
+    <h2 className="text-xl font-bold text-[#47464C] mb-4 sm:text-2xl">
+      Find what you are looking for...
+    </h2>
+    <label
+      htmlFor="search-input"
+      className="mb-2 text-sm font-medium text-[#47464C] sr-only"
+    >
+      Search
+    </label>
+    <div className="relative">
+      <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+        <svg
+          className="w-4 h-4 text-[#47464C]"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 20 20"
+        >
+          <path
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+          />
+        </svg>
+      </div>
+      <input
+        type="search"
+        id="search-input"
+        className="block w-full p-3 pl-10 text-sm text-[#47464C] border border-gray-300 rounded-lg bg-white focus:ring-[#B4C424] focus:border-[#B4C424] sm:p-4"
+        placeholder="Search Mockups, Logos..."
+        required
+      />
+      <button
+        type="submit"
+        className="text-white absolute right-2 bottom-2 bg-[#B4C424] hover:bg-[#47464C] focus:ring-4 focus:outline-none focus:ring-[#B4C424] font-medium rounded-lg text-sm px-3 py-1.5 sm:bottom-2.5 sm:px-4 sm:py-2"
+      >
+        Search
+      </button>
+    </div>
+  </form>
 </div>
+
 
          
 
