@@ -47,7 +47,7 @@ const Navbar = () => {
        
 
       {/* Navbar: Logo & Links */}
-      <div className="w-full flex justify-center items-center h-7 py-7">
+      <div className="w-full  fixed top-20 left-0 z-10 flex justify-center items-center h-7 py-7">
         <nav className="w-full max-w-screen-xl  flex justify-between items-center px-4 sm:px-8 bg-white shadow-md rounded-lg">
           {/* Logo Section */}
           <div className="flex items-center">
@@ -115,3 +115,5 @@ const Navbar = () => {
   );
 };
 export default Navbar;
+
+

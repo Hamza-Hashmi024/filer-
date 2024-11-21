@@ -34,7 +34,7 @@ const Aboutus = () => {
   return (
     <div className="bg-gray-50">
       <Navbar />
-      <div className="text-center mt-8">
+      <div className="text-center mt-20 mb-2">
         <motion.h1
           className="text-4xl sm:text-5xl md:text-6xl text-[#47464C] font-semibold"
           initial={{ opacity: 0, y: -50 }}
