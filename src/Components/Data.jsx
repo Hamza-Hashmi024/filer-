@@ -37,8 +37,6 @@ export const companyRegistration = [
       ]
     }
   ];
-
-
   export const incomeTax =[
     {
         serviceName: "NTN Registr ation – Salaried",
@@ -64,8 +62,6 @@ export const companyRegistration = [
      }
 
 ];
-
-
 
 export const USA_LLC  = [
     {

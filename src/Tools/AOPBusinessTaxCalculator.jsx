@@ -39,9 +39,9 @@ const AOPBusinessTaxCalculator = () => {
   };
 
   return (
-    <div className="rounded-3xl shadow-2xl bg-gray-100 flex flex-col items-center py-10 px-4 sm:px-6 lg:px-8">
+    <div className="rounded-3xl bg-gray-100 flex flex-col items-center py-10 px-4 sm:px-6 lg:px-8">
       <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">
-        Pakistan AOP & Business Tax Calculator
+        Pakistan AOP & Business Indiviuals
       </h1>
       <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-xs sm:max-w-md">
         <label htmlFor="income" className="block text-gray-700 font-medium mb-2">
