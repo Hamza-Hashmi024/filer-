@@ -6,6 +6,7 @@ import Contactus from "./Pages/Contactus";
 import BusinessServices from "./Pages/BusinessServices";
 import TaxTools from "./Components/TaxTools";
 import NtNStatus from "./Tools/NtNStatus";
+import ATLstatus from "./Tools/ATLstatus";
 
 
 
@@ -20,6 +21,7 @@ const App = () => {
       <Route path="/services" element={<BusinessServices/>}/>
       <Route path="/taxtools" element={<TaxTools/>}/>
       <Route path="/ntnstatuschecker" element={<NtNStatus/>}/>
+      <Route path="/Atlstatus" element={<ATLstatus/>}/>
     </Routes>
     </BrowserRouter>
   )

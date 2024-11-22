@@ -12,10 +12,10 @@ const TaxTools = () => {
       <Navbar />
       <div className="min-h-screen mt-35  flex flex-col items-center justify-center bg-white py-10 px-4">
 
-        <TaxToolsection/>
+       
        
 
-        <div className="flex flex-wrap gap-20 justify-center">
+        <div className="flex mt-20 flex-wrap gap-20 justify-center">
           {/* Salary Tax Calculator */}
           <div className="w-full max-w-xs sm:max-w-md lg:w-96">
             <SalaryTaxCalculator />
@@ -26,6 +26,7 @@ const TaxTools = () => {
             <AOPBusinessTaxCalculator />
           </div>
         </div>
+        <TaxToolsection/>
       </div>
     </div>
   );
