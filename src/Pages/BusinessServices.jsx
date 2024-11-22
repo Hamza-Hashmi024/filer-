@@ -26,21 +26,10 @@ const Services = () => {
   return (
     <>
       <Navbar />
-      <div className="mt-40">
-        <div className="flex w-full" >
-         
-          <div className="text-center my-8">
-            <h1 className="text-3xl font-bold text-[#47464C]  ">
-              <span className="shadow-2xl">Our Business Services</span>
-            </h1>
-            <p className="text-lg text-[#47464C] mt-4 max-w-2xl mx-auto  ">
-              Registering a business can be quite stressful. Worry not! Get
-              expert assistance on how and which business structure to select
-              and start your entrepreneurial journey with a bang!
-            </p>
-          </div>
-            {/* Search Form */}
-          <div className="  flex flex-col  lg:w-4/6 lg:items-center lg:mx-auto">
+      <div className="mt-40 w-full">
+
+          {/* Search Form */}
+          <div className="  flex flex-col  lg:w-4/6 lg:items-end lg:mx-auto">
             <form className="max-w-md w-full">
               <h2 className="text-xl font-bold text-[#47464C] mb-4 sm:text-2xl">
                 Find what you are looking for...
@@ -63,10 +52,33 @@ const Services = () => {
             </form>
           </div>
 
-         
-        </div>
+       
 
-        {/* Service Buttons */}
+        {/* Services List */}
+        <div className="max-w-4xl space-x-36 mt-8">
+
+          
+          {/* Text */}
+        <div className="space-x-36" >
+         
+         <div className="text-center  my-8">
+           <h1 className="text-3xl font-bold text-[#47464C]  ">
+             <span className="">Our Business Services</span>
+           </h1>
+           <p className="text-lg text-[#47464C] mt-4 max-w-2xl mx-auto  ">
+             Registering a business can be quite stressful. Worry not! Get
+             expert assistance on how and which business structure to select
+             and start your entrepreneurial journey with a bang!
+           </p>
+         </div>
+         
+
+        
+       </div>
+
+
+
+          {/* Service Buttons */}
         <div className="flex justify-center gap-10">
           <button
             onClick={() => setSelectedService("incomeTax")}
@@ -93,9 +105,11 @@ const Services = () => {
             Show All
           </button>
         </div>
+          
 
-        {/* Services List */}
-        <div className="max-w-4xl mx-auto space-y-6 mt-8">
+
+
+
           <div className="max-w-4xl mx-auto space-y-6 mt-8">
             {services.map((service, index) => (
               <div
