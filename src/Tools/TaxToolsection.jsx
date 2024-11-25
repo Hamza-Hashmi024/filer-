@@ -13,7 +13,7 @@ const TaxToolsection = () => {
       </h1>
       <p className="text-[#47464C] font-medium mt-4 text-base md:text-lg">
         Our tax tools are designed to make calculations easy, accurate, and
-        hassle-free. Whether you're managing your salary taxes or running a
+        hassle-free. Whether youre managing your salary taxes or running a
         business, you can rely on our smart tools to guide you every step of
         the way.
       </p>
