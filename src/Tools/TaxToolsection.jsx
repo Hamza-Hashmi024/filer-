@@ -21,26 +21,26 @@ const TaxToolsection = () => {
         {/* NTN Status */}
         <div
           onClick={() => navigate("/ntnstatuschecker")}
-          className="bg-[#B4C424] cursor-pointer w-40 h-40 flex flex-col items-center justify-center rounded-full shadow-lg transform transition duration-300 hover:scale-105"
+          className="bg-[#47464C] cursor-pointer w-40 h-40 flex flex-col items-center justify-center rounded-full shadow-lg transform transition duration-300 hover:scale-105"
         >
-          <GrDocumentNotes size={40} color="#47464C" />
-          <p className="font-semibold text-[#47464C] mt-2">NTN STATUS</p>
+          <GrDocumentNotes size={40} color="#B4C424" />
+          <p className="font-semibold text-[#B4C424] mt-2">NTN STATUS</p>
         </div>
         {/* ATL Status */}
         <div
           onClick={() => navigate("/Atlstatus")}
-          className="bg-[#B4C424] cursor-pointer w-40 h-40 flex flex-col items-center justify-center rounded-full shadow-lg transform transition duration-300 hover:scale-105"
+          className="bg-[#47464C]  cursor-pointer w-40 h-40 flex flex-col items-center justify-center rounded-full shadow-lg transform transition duration-300 hover:scale-105"
         >
-          <HiReceiptTax size={40} color="#47464C" />
-          <p className="font-semibold text-[#47464C] mt-2">ATL STATUS</p>
+          <HiReceiptTax size={40} color="#B4C424"/>
+          <p className="font-semibold text-[#B4C424]  mt-2">ATL STATUS</p>
         </div>
         {/* Calculator */}
         <div
           onClick={() => navigate("/taxtools")}
-          className="bg-[#B4C424] cursor-pointer w-40 h-40 flex flex-col items-center justify-center rounded-full shadow-lg transform transition duration-300 hover:scale-105"
+          className="bg-[#47464C]  cursor-pointer w-40 h-40 flex flex-col items-center justify-center rounded-full shadow-lg transform transition duration-300 hover:scale-105"
         >
-          <FaCalculator size={40} color="#47464C" />
-          <p className="font-semibold text-[#47464C] mt-2">Calculator</p>
+          <FaCalculator size={40} color="#B4C424"  />
+          <p className="font-semibold text-[#B4C424]  mt-2">Calculator</p>
         </div>
       </div>
       <p className="font-semibold text-lg md:text-xl text-[#47464C] mt-8">

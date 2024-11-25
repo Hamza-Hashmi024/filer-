@@ -4,6 +4,7 @@ const NtNStatus = () => {
 
   return (
     <div>
+      
         <Navbar/>
 
         <div className="mt-40 w-full "> 
@@ -35,7 +36,7 @@ const NtNStatus = () => {
             type="number"
             id="simple-search"
             className="bg-[#FFFFF] border border-[#47464C] text-[#47464C] text-sm rounded-lg focus:ring-[#B4C424] focus:border-[#B4C424] block w-full ps-10 p-2.5"
-            placeholder="Search branch name..."
+            placeholder="000-00-000"
             required
         />
     </div>
