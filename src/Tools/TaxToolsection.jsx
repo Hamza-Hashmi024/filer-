@@ -21,7 +21,7 @@ const TaxToolsection = () => {
         {/* NTN Status */}
         <div
           onClick={() => navigate("/ntnstatuschecker")}
-          className="bg-[#47464C] cursor-pointer w-40 h-40 flex flex-col items-center justify-center rounded-full shadow-lg transform transition duration-300 hover:scale-105"
+          className="bg-[#47464C] cursor-pointer w-40 h-40 flex flex-col items-center justify-center rounded-full shadow-xl transform transition duration-300 hover:scale-105"
         >
           <GrDocumentNotes size={40} color="#B4C424" />
           <p className="font-semibold text-[#B4C424] mt-2">NTN STATUS</p>
@@ -29,7 +29,7 @@ const TaxToolsection = () => {
         {/* ATL Status */}
         <div
           onClick={() => navigate("/Atlstatus")}
-          className="bg-[#47464C]  cursor-pointer w-40 h-40 flex flex-col items-center justify-center rounded-full shadow-lg transform transition duration-300 hover:scale-105"
+          className="bg-[#47464C]  cursor-pointer w-40 h-40 flex flex-col items-center justify-center rounded-full shadow-xl transform transition duration-300 hover:scale-105"
         >
           <HiReceiptTax size={40} color="#B4C424"/>
           <p className="font-semibold text-[#B4C424]  mt-2">ATL STATUS</p>
@@ -37,7 +37,7 @@ const TaxToolsection = () => {
         {/* Calculator */}
         <div
           onClick={() => navigate("/taxtools")}
-          className="bg-[#47464C]  cursor-pointer w-40 h-40 flex flex-col items-center justify-center rounded-full shadow-lg transform transition duration-300 hover:scale-105"
+          className="bg-[#47464C]  cursor-pointer w-40 h-40 flex flex-col items-center justify-center rounded-full shadow-xl transform transition duration-300 hover:scale-105"
         >
           <FaCalculator size={40} color="#B4C424"  />
           <p className="font-semibold text-[#B4C424]  mt-2">Calculator</p>

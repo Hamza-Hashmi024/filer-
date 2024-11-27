@@ -82,7 +82,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Popular Services Card */}
+
       <div className="flex justify-center items-center w-full">
   <div className="w-10/12">
     <h1 className="text-center text-2xl font-semibold tracking-tight text-[#47464C] sm:text-4xl">
@@ -90,35 +90,36 @@ const Home = () => {
     </h1>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
       {services.map((service, index) => (
-        <div
-          key={index}
-          className="max-w-sm border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700 transform transition-transform duration-500 hover:scale-105"
-        >
-          <div onClick={() => navigate(service.link)} className="cursor-pointer">
-            <img className="rounded-t-lg" src={service.image} alt={service.title} />
-          </div>
-          <div className="p-5">
-            <h5
+        <div key={index} className="card bg-base-100 image-full w-96 shadow-xl">
+          <figure>
+            <img src={service.image} alt={service.title} />
+          </figure>
+          <div className="card-body">
+            <h2
               onClick={() => navigate(service.link)}
-              className="mb-2 text-2xl font-bold tracking-tight text-[#47464C] dark:text-white cursor-pointer"
+              className="card-title cursor-pointer text-white"
             >
               {service.title}
-            </h5>
-            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              {service.description}
-            </p>
-            <button
-              onClick={() => navigate(service.link)}
-              className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#B4C424] rounded-lg hover:bg-[#47464C] focus:ring-4 focus:outline-none dark:bg-[#47464C] dark:hover:bg-[#B4C424]"
-            >
-              Read more
-            </button>
+            </h2>
+            <p className="text-gray-300">{service.description}</p>
+            <div className="card-actions justify-end">
+              <button
+                onClick={() => navigate(service.link)}
+                className="btn btn-primary"
+              >
+                Read More
+              </button>
+            </div>
           </div>
         </div>
       ))}
     </div>
   </div>
 </div>
+
+
+
+    
 
       <Footer />
     </div>
