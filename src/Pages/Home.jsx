@@ -105,7 +105,7 @@ const Home = () => {
             <div className="card-actions justify-end">
               <button
                 onClick={() => navigate(service.link)}
-                className="btn btn-primary"
+                className="bg-[#B4C424]  text-[#FFFFF] p-2 m-2  font-semibold text-white focus:outline-none border-[#B4C424] hover:bg-[#A0B520] hover:text-white focus:z-10 focus:ring-4 focus:ring-[#B4C424] rounded-full"
               >
                 Read More
               </button>
