@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .vercel
+
+# Add this line to ensure .env is ignored
+.env
