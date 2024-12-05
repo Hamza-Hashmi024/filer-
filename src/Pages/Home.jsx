@@ -118,9 +118,6 @@ const Home = () => {
 </div>
 
 
-
-    
-
       <Footer />
     </div>
   );
