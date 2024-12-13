@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { FaWhatsapp } from "react-icons/fa";
 
-const USALLc = () => {
+const USALLC = () => {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -74,4 +74,4 @@ const USALLc = () => {
   );
 };
 
-export default USALLc;
+export default USALLC

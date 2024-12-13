@@ -7,7 +7,7 @@ import BusinessServices from "../Pages/BusinessServices";
 import TaxTools from "../Components/TaxTools";
 import NtNStatus from "../Tools/NtNStatus"
 import ATLstatus from "../Tools/ATLstatus";
-import USALLc from "./Services/USALLC";
+import USALLC from "./Services/USALLC";
 import CompanyRegistration from "../Components/Services/CompanyRegistration"
 import IncomeTax from "./Services/IncomeTax";
 
@@ -25,7 +25,7 @@ const userRoutes = () => {
       <Route path="/Atlstatus" element={<ATLstatus/>}/>
       <Route path="/company-registration" element={<CompanyRegistration />} />
         <Route path="/income-tax" element={<IncomeTax />} />
-        <Route path="/usa-llc" element={<USALLc />} />
+        <Route path="/usa-llc" element={<USALLC />} />
     </Routes>
     </BrowserRouter>
   )
