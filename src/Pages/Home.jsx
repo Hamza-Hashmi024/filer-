@@ -6,8 +6,13 @@ import Footer from "../Components/Footer";
 import { useNavigate } from "react-router-dom";
 
 
+
+
 const Home = () => {
   const navigate = useNavigate();
+
+
+
 
   const services = [
     {
@@ -31,7 +36,9 @@ const Home = () => {
       image: Sliderimg,
       link: "/tech-startups",
     },
-  ];
+  ]; 
+
+  
 
   return (
     <div>
@@ -116,6 +123,10 @@ const Home = () => {
     </div>
   </div>
 </div>
+
+
+
+
 
 
       <Footer />

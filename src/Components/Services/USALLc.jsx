@@ -1,11 +1,16 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { FaWhatsapp } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+
 
 const USALLC = () => {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const navigate = useNavigate();
+
+
 
   useEffect(() => {
     const fetchServices = async () => {
@@ -56,14 +61,15 @@ const USALLC = () => {
               />
             </div>
             <div className="flex justify-end items-center space-x-2 mt-4">
-              <button className="relative inline-flex items-center justify-center p-2 text-sm font-medium text-gray-900 rounded-lg bg-[#B4C424] focus:ring-4 focus:outline-none focus:ring-lime-200">
-                <span className="relative px-5 py-2.5 bg-white rounded-md transition-all ease-in duration-75 group-hover:bg-opacity-0">
-                  Request a call
-                </span>
-              </button>
-              <span className="mt-1 border-4 border-green-500 rounded-lg p-1">
-                <FaWhatsapp className="text-green-500" style={{ fontSize: '34px' }} />
-              </span>
+            <button
+              className="bg-[#B4C424] text-white py-2 px-4 rounded-lg mt-4"
+              onClick={() =>
+                navigate("/order", { state: { selectedService: service.serviceName } })
+              }
+            >
+              Get Info
+            </button>
+            
             </div>
           </div>
         </div>
@@ -74,4 +80,4 @@ const USALLC = () => {
   );
 };
 
-export default USALLC
+export default USALLC;

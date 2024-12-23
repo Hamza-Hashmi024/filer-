@@ -10,6 +10,7 @@ import ATLstatus from "../Tools/ATLstatus";
 import USALLC from "./Services/USALLC";
 import CompanyRegistration from "../Components/Services/CompanyRegistration"
 import IncomeTax from "./Services/IncomeTax";
+import Order from "../Components/Order"
 
 const userRoutes = () => {
   return (
@@ -26,9 +27,11 @@ const userRoutes = () => {
       <Route path="/company-registration" element={<CompanyRegistration />} />
         <Route path="/income-tax" element={<IncomeTax />} />
         <Route path="/usa-llc" element={<USALLC />} />
+        <Route path="/order" element={<Order />} />
     </Routes>
     </BrowserRouter>
   )
 }
+
 
 export default userRoutes

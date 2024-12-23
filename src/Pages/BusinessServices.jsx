@@ -6,10 +6,10 @@ import CompanyRegistration from "../Components/Services/CompanyRegistration";
 import IncomeTax from "../Components/Services/IncomeTax";
 
 
+
 const BusinessServices = () => {
   const [selectedService, setSelectedService] = useState("all");
 
-  
 
   const renderServiceComponent = () => {
     switch (selectedService) {
@@ -22,9 +22,15 @@ const BusinessServices = () => {
       default:
         return (
           <div className="mt-4 mb-4" >
+            <div className="mt-4 mb-4">
             <CompanyRegistration />
+            </div>
+           <div className="mt-4 mb-4">
             <IncomeTax />
+            </div>
+            <div className="mt-4 mb-4">
             <USALLC />
+            </div>
           </div>
         );
     }
