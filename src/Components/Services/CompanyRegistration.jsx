@@ -35,10 +35,10 @@ const CompanyRegistration = () => {
   }
 
   return (
-    <div className="h-screen max-w-4xl mx-auto space-y-6">
+    <div className="h-screen   max-w-4xl mx-auto space-y-6">
       <div className="">
         {services.map((service, index) => (
-          <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden mb-4">
+          <div key={index} className="bg-white rounded-lg shadow-lg mb-4">
             <div className="p-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-xl font-semibold text-gray-800">{service.serviceName}</h2>

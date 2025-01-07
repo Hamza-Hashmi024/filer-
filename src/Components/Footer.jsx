@@ -33,7 +33,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-white text-[#47464C] py-10 mt-12">
+    <footer className="bg-white text-[#47464C]   py-10 mt-12">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {footerSections.map((section, index) => (
           <div key={index} className="text-center md:text-left">
@@ -67,3 +67,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
